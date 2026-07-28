@@ -11,8 +11,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout project-map
         uses: actions/checkout@v4
+        with:
+          path: project-map
+
+      - name: Checkout json5-dlang (path dependency)
+        uses: actions/checkout@v4
+        with:
+          repository: dlang-supplemental/json5-dlang
+          path: dlang-supplemental/json5-dlang
 
       - name: Set up D (LDC)
         uses: dlang-community/setup-dlang@v1
@@ -20,10 +28,9 @@ jobs:
           compiler: ldc-latest
 
       - name: Build library (project-map)
-        working-directory: lib
+        working-directory: project-map/lib
         run: dub build --build=release
 
       - name: Build CLI (lsgrouped)
-        working-directory: apps/lsgrouped
+        working-directory: project-map/apps/lsgrouped
         run: dub build --build=release
-
