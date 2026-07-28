@@ -1,0 +1,58 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Tag to release (e.g. v0.1.0); empty uses the pushed tag"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Resolve version
+        id: ver
+        shell: bash
+        run: |
+          if [ -n "${{ github.event.inputs.tag }}" ]; then
+            TAG="${{ github.event.inputs.tag }}"
+          else
+            TAG="${GITHUB_REF_NAME}"
+          fi
+          VERSION="${TAG#v}"
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.ver.outputs.tag }}
+          name: project-map ${{ steps.ver.outputs.version }}
+          generate_release_notes: true
+          body: |
+            ## project-map ${{ steps.ver.outputs.version }}
+
+            D library + `lsgrouped` CLI for project-type detection and file-role grouping.
+
+            ### Consume (after DUB registration)
+
+            ```json
+            "project-map": "~>${{ steps.ver.outputs.version }}"
+            ```
+
+            Until registered on code.dlang.org, use a git/path dependency:
+
+            ```json
+            "project-map": { "repository": "git+https://github.com/openshellorg/project-map.git", "version": "${{ steps.ver.outputs.tag }}" }
+            ```
+
+            Docs: https://openshellorg.github.io/open-shell-org/project-map/
