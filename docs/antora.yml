@@ -1,5 +1,6 @@
 name: project-map
 title: project-map
-version: 0.2.0
+version: ~
 nav:
 - modules/ROOT/nav.adoc
+
