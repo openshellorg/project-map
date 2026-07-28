@@ -1,0 +1,32 @@
+= File role catalog (inventory)
+
+Roles used by `lsgrouped` grouping. Prefer ELI5 labels.
+
+== Implemented (`profiles/roles/`)
+
+* [x] Version control -> Git
+* [x] Dev tool settings
+* [x] Project identity
+* [x] Dependencies
+* [x] CI and automation
+* [x] Editor settings
+* [x] Secrets and env
+* [x] Docs
+* [x] Build output
+* [x] Source code
+* [x] Tests
+* [ ] Unsorted (built-in fallback, not an SDL file)
+
+== Planned
+
+* [ ] Version control -> Mercurial / Sapling / Pijul / Fossil
+* [ ] Container / Docker
+* [ ] Infrastructure as code
+* [ ] Generated / lock-only manifests
+* [ ] Package manager config (`.npmrc`, `.yarnrc.yml`)
+* [ ] Localization / i18n
+* [ ] Assets / static media
+* [ ] Database migrations
+* [ ] Benchmarks
+* [ ] Examples / samples
+* [ ] Agent / AI rules (`.cursor`, `AGENTS.md`, `.github/copilot*`)

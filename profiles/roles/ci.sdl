@@ -1,0 +1,6 @@
+name "CI and automation"
+rolePath "CI and automation"
+eli5Label "CI and automation"
+iconId "ci"
+order 50
+anyOfFiles ".github" ".github/" ".gitlab-ci.yml" ".circleci" ".circleci/" "Jenkinsfile" "azure-pipelines.yml" ".travis.yml" "buildkite.yml" ".woodpecker.yml" "bitbucket-pipelines.yml"

@@ -1,0 +1,12 @@
+// Next.js technology profile
+name "Next.js"
+parent "Node.js"
+description "React meta-framework for full-stack web apps."
+anyOfFiles "**/package.json" "**/next.config.*"
+keywords "next/"
+manifests {
+	manifest pathPattern="**/package.json" format="json" {
+		required "next"
+		dependencyFields "dependencies" "devDependencies"
+	}
+}

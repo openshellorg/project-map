@@ -1,0 +1,31 @@
+= project-map
+:toc: preamble
+
+Dual-axis library for **project-type detection** and **file-role classification**.
+
+== Consumers
+
+* `lsgrouped` CLI (TTY / JSON)
+* DevCentr (stack recognition via Dub dependency)
+* Future GUI widgets (icons via `ViewOptions.includeIcons`)
+
+== Profiles
+
+* `profiles/stacks/` — technology / project types (SDL)
+* `profiles/roles/` — ELI5 file-role groups for directory listings
+
+Set `PROJECT_MAP_PROFILES` to override discovery.
+
+== Certification
+
+TTY first line:
+
+----
+{OSO} Certified - opensh.org
+----
+
+Truecolor recipe lives in `project_map.badge`. Domain `opensh.org` is owned; wire DNS to the docs host when ready.
+
+== Discoverability
+
+Certified CLIs must ship a man page (and preferably info) in addition to `--help`. Classic `ls` with only `--help` on some hosts fails this bar.

@@ -1,0 +1,4 @@
+// D language (DUB) technology profile
+name "D"
+description "D language project managed with DUB."
+anyOfFiles "**/dub.sdl" "**/dub.json" "**/dub.selections.json"

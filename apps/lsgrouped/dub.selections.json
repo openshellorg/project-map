@@ -1,0 +1,14 @@
+{
+	"fileVersion": 1,
+	"versions": {
+		"assertions": {"path":"../../../../dev-centr/devcentr/unit-threaded/subpackages/assertions"},
+		"exception": {"path":"../../../../dev-centr/devcentr/unit-threaded/subpackages/exception"},
+		"from": {"path":"../../../../dev-centr/devcentr/unit-threaded/subpackages/from"},
+		"json5-dlang": {"path":"../../../../dlang-supplemental/json5-dlang"},
+		"project-map": {"path":"../../lib"},
+		"runner": {"path":"../../../../dev-centr/devcentr/unit-threaded/subpackages/runner"},
+		"sdlang-d": "0.10.6",
+		"taggedalgebraic": "0.11.24",
+		"unit-threaded": "0.7.55"
+	}
+}

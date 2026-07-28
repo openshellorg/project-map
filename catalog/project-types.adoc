@@ -1,0 +1,95 @@
+= Project type catalog (inventory)
+
+Compiled inventory of project types to flesh as stack profiles over time.
+Status: `done` = SDL under `profiles/stacks/`; `todo` = catalog only.
+
+== Languages / runtimes
+
+* [x] Node.js
+* [x] Python
+* [x] Rust
+* [x] D (DUB)
+* [ ] Go
+* [ ] Java / Maven / Gradle
+* [ ] C# / .NET
+* [ ] Ruby / Bundler
+* [ ] PHP / Composer
+* [ ] Swift / SPM
+* [ ] Kotlin
+* [ ] Elixir / Mix
+* [ ] Haskell / Cabal / Stack
+* [ ] Zig
+* [ ] Nim
+* [ ] Crystal
+* [ ] Perl
+* [ ] R
+* [ ] Julia
+* [ ] Scala / sbt
+* [ ] Lua / LuaRocks
+* [ ] OCaml / dune
+* [ ] F#
+* [ ] Dart / Pub
+* [ ] Flutter
+* [ ] Solidity
+* [ ] COBOL (legacy markers)
+
+== JS / TS frameworks
+
+* [x] React
+* [x] Next.js
+* [x] Astro
+* [ ] SolidStart / Solid
+* [ ] Vue / Nuxt
+* [ ] Svelte / SvelteKit
+* [ ] Angular
+* [ ] Remix
+* [ ] Gatsby
+* [ ] Ember
+* [ ] Vite app (generic)
+* [ ] Electron
+* [ ] Tauri
+
+== Python frameworks
+
+* [x] FastAPI
+* [x] Flask
+* [ ] Django
+* [ ] Tornado
+* [ ] Pyramid
+* [ ] Starlette
+* [ ] Litestar
+
+== Build / monorepo
+
+* [ ] Bazel
+* [ ] Buck2
+* [ ] Pants
+* [ ] Nx
+* [ ] Turborepo
+* [ ] Lerna
+* [ ] pnpm workspace
+* [ ] Cargo workspace
+* [ ] CMake
+* [ ] Meson
+* [ ] Make / Autotools
+* [ ] Gradle multi-project
+
+== Data / ML
+
+* [ ] Jupyter
+* [ ] dbt
+* [ ] Spark
+* [ ] Terraform
+* [ ] Pulumi
+* [ ] Ansible
+
+== Mobile
+
+* [ ] React Native
+* [ ] Expo
+* [ ] Android (Gradle)
+* [ ] Xcode project
+
+== Notes
+
+Expand profiles incrementally; keep detection conservative (prefer false negatives over false positives).

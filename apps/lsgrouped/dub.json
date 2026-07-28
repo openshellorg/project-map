@@ -1,0 +1,13 @@
+{
+	"name": "lsgrouped",
+	"description": "List directory entries grouped by project role",
+	"authors": ["OpenShellOrg"],
+	"license": "MIT",
+	"targetType": "executable",
+	"targetName": "lsgrouped",
+	"sourcePaths": ["source"],
+	"dependencies": {
+		"project-map": { "path": "../../lib" }
+	},
+	"stringImportPaths": ["../../profiles", "man"]
+}

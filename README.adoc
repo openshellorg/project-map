@@ -1,0 +1,61 @@
+= project-map
+:toc: preamble
+
+OpenShellOrg library and CLI for **project-type detection** and **file-role grouping**.
+
+* Library (`project-map`) — D API consumed by DevCentr, GUIs, and CLIs
+* CLI (`lsgrouped`) — list a directory with entries grouped by role (not a drop-in for `ls`)
+* Profiles — SDL corpus under `profiles/stacks` and `profiles/roles`
+* Nushell module — `modules/nu/lsgrouped.nu`
+
+Certification mark: `{OSO} Certified - opensh.org`
+
+== Build
+
+----
+dub build :project-map
+dub build :lsgrouped
+----
+
+Or from package dirs:
+
+----
+cd lib && dub build
+cd ../apps/lsgrouped && dub build
+----
+
+== CI
+
+GitHub Actions workflow `ci.yml` builds the library (`lib/`) and the CLI (`apps/lsgrouped/`) on pushes, PRs, and manual dispatch.
+
+== Publish to DUB registry
+
+This environment's DUB toolchain does not provide `dub publish`. Publishing/registration at the official DUB registry (`code.dlang.org`) is automated via the `dlang-supplemental/dub-publish` CLI.
+
+Workflow:
+
+1. Tag a release (example: `git tag v0.2.0 && git push origin v0.2.0`)
+2. Ensure `origin` points at `https://github.com/openshellorg/project-map` (or pass `--url` explicitly)
+3. Run (locally) or let CI do it:
+
+----
+dub-publish --root lib register \
+  --url https://github.com/openshellorg/project-map \
+  --package project-map \
+  --ignore-fork
+----
+
+CI workflow `publish-dub.yml` registers on tags matching `v*` (and also supports `workflow_dispatch`). It requires GitHub secrets:
+
+* `DUB_REGISTRY_USER`
+* `DUB_REGISTRY_PASSWORD`
+
+== Docs
+
+* link:docs/modules/ROOT/pages/index.adoc[Overview]
+* link:CHANGELOG.adoc[Changelog]
+
+== Related
+
+* https://opensh.org/[opensh.org] (OSO public home)
+* DevCentr consumes this library for workspace stack recognition

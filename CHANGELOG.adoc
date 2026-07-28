@@ -1,0 +1,9 @@
+= Changelog
+
+See link:changelog-details/[] for dated detail notes.
+
+== 2026-07-28
+
+* Initial `project-map` library (stack recognition + file roles)
+* `lsgrouped` CLI with TTY grouping, `--json`, and `--set` aliases
+* Profile corpus and catalogs extracted/expanded from DevCentr recognizer

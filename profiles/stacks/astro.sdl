@@ -1,0 +1,11 @@
+// Astro technology profile
+name "Astro"
+parent "Node.js"
+description "Content-focused web framework with islands architecture."
+anyOfFiles "**/astro.config.*" "**/package.json"
+manifests {
+	manifest pathPattern="**/package.json" format="json" {
+		required "astro"
+		dependencyFields "dependencies" "devDependencies"
+	}
+}

@@ -1,0 +1,6 @@
+name "Editor settings"
+rolePath "Editor settings"
+eli5Label "Editor settings"
+iconId "editor"
+order 60
+anyOfFiles ".vscode" ".vscode/" ".idea" ".idea/" ".vs" ".vs/" "*.code-workspace" ".cursor" ".cursor/" ".zed" ".zed/"

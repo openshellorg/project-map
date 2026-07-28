@@ -1,0 +1,8 @@
+// Python technology profile — prefer editing this .sdl over .json5
+name "Python"
+description "General Python project footprint detected through dependency manifests."
+anyOfFiles "**/pyproject.toml" "**/requirements.txt"
+manifests {
+	manifest pathPattern="**/pyproject.toml" format="text"
+	manifest pathPattern="**/requirements.txt" format="text"
+}

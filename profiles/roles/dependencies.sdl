@@ -1,0 +1,6 @@
+name "Dependencies"
+rolePath "Dependencies"
+eli5Label "Dependencies"
+iconId "deps"
+order 40
+anyOfFiles "node_modules" "node_modules/" "package-lock.json" "pnpm-lock.yaml" "yarn.lock" "bun.lock" "bun.lockb" "dub.selections.json" "Cargo.lock" "poetry.lock" "Pipfile.lock" "uv.lock" "composer.lock" "Gemfile.lock" "go.sum" "packages/" "vendor/"

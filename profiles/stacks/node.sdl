@@ -1,0 +1,9 @@
+// Node.js technology profile — prefer editing this .sdl over .json5
+name "Node.js"
+description "Runtime profile for JavaScript and TypeScript projects managed with Node.js."
+anyOfFiles "**/package.json" "**/pnpm-lock.yaml"
+manifests {
+	manifest pathPattern="**/package.json" format="json" {
+		dependencyFields "dependencies" "devDependencies" "optionalDependencies"
+	}
+}

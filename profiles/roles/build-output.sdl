@@ -1,0 +1,6 @@
+name "Build output"
+rolePath "Build output"
+eli5Label "Build output"
+iconId "build"
+order 90
+anyOfFiles "dist" "dist/" "build" "build/" "target" "target/" "out" "out/" ".next" ".next/" ".nuxt" ".nuxt/" "coverage" "coverage/" "*.o" "*.obj" "*.exe" "*.dll" "*.so" "*.dylib"

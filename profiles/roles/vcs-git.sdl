@@ -1,0 +1,6 @@
+name "Git"
+rolePath "Version control/Git"
+eli5Label "Version control -> Git"
+iconId "git"
+order 10
+anyOfFiles ".git" ".git/" ".gitignore" ".gitattributes" ".gitmodules" "**/.gitignore" "**/.gitattributes"

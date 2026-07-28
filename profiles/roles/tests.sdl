@@ -1,0 +1,6 @@
+name "Tests"
+rolePath "Tests"
+eli5Label "Tests"
+iconId "test"
+order 110
+anyOfFiles "test" "test/" "tests" "tests/" "spec" "spec/" "__tests__" "__tests__/" "*.test.*" "*.spec.*" "*_test.go" "*_test.d"

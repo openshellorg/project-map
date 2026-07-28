@@ -1,0 +1,6 @@
+name "Docs"
+rolePath "Docs"
+eli5Label "Docs"
+iconId "docs"
+order 80
+anyOfFiles "docs" "docs/" "doc" "doc/" "documentation" "documentation/" "*.adoc" "mkdocs.yml" "antora.yml"

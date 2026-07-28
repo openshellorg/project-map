@@ -1,0 +1,6 @@
+= Profiles
+
+* link:stacks/README.adoc[stacks/] — project-type / technology detection
+* link:roles/README.adoc[roles/] — file-role grouping for `lsgrouped`
+
+Catalog inventories (to-do lists for expansion): link:../catalog/[catalog/]

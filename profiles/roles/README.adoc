@@ -1,0 +1,12 @@
+= Role profiles
+
+Each `.sdl` file describes one **file role** used by `lsgrouped` grouping.
+
+Fields:
+
+* `name` — short id
+* `rolePath` — hierarchy path (`Version control/Git`)
+* `eli5Label` — human label (`Version control -> Git`)
+* `iconId` — optional icon key for GUIs
+* `order` — lower sorts earlier
+* `anyOfFiles` / `allOfFiles` / `excludedFiles` — globs matched against listing entries

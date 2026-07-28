@@ -1,0 +1,6 @@
+name "Dev tool settings"
+rolePath "Dev tool settings"
+eli5Label "Dev tool settings"
+iconId "tools"
+order 20
+anyOfFiles ".dprint.toml" "dprint.json" "dprint.jsonc" ".prettierrc" ".prettierrc.*" "prettier.config.*" "eslint.config.*" ".eslintrc" ".eslintrc.*" ".editorconfig" ".clang-format" "rustfmt.toml" ".rustfmt.toml" ".biome.json" "biome.json" ".stylelintrc" ".stylelintrc.*" "lefthook.yml" ".husky" ".husky/"

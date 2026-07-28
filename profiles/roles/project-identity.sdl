@@ -1,0 +1,6 @@
+name "Project identity"
+rolePath "Project identity"
+eli5Label "Project identity"
+iconId "id"
+order 30
+anyOfFiles "README" "README.*" "LICENSE" "LICENSE.*" "LICENCE" "LICENCE.*" "CHANGELOG" "CHANGELOG.*" "CONTRIBUTING" "CONTRIBUTING.*" "CODE_OF_CONDUCT*" "SECURITY.md" "AUTHORS" "NOTICE"

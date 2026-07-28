@@ -1,0 +1,76 @@
+.\" Man page for lsgrouped
+.TH LSGROUPED 1 "July 2026" "OpenShellOrg" "User Commands"
+.SH NAME
+lsgrouped \- list directory entries grouped by project role
+.SH SYNOPSIS
+.B lsgrouped
+[\fIpath\fR]
+.br
+.B lsgrouped
+\fB\-\-json\fR [\fIpath\fR]
+.br
+.B lsgrouped
+\fB\-\-set=\fR\fIname\fR [\fB\-y\fR] [\fB\-e\fR]
+.SH DESCRIPTION
+.B lsgrouped
+lists the immediate entries of a directory, grouped into functional roles
+(such as version control, dev tool settings, and source code). It uses the
+OpenShellOrg
+.B project-map
+profiles.
+.P
+It is
+.B not
+a drop-in replacement for
+.BR ls (1).
+Do not install a binary named
+.B ls
+on
+.BR PATH .
+Optional interactive overrides are shell aliases/functions only.
+.SH OPTIONS
+.TP
+.BR \-j ", " \-\-json
+Emit a JSON
+.B ProjectScan
+document instead of a human layout.
+.TP
+.BR \-y
+Confirm installing an interactive
+.B ls
+override with
+.BR \-\-set=ls .
+.TP
+.BR \-e
+Emit the alias snippet without writing a shell rc file.
+.TP
+.BI \-\-set= name
+Install an alias:
+.BR lsmap ,
+.BR lsf ,
+.BR lsg ,
+.BR gls ,
+or interactive
+.BR ls .
+.TP
+.BI \-\-unset= name
+Remove a previously installed alias block.
+.TP
+.BI \-\-profiles= dir
+Profiles root containing
+.B stacks/
+and
+.BR roles/ .
+.SH ESCAPE HATCH
+If interactive
+.B ls
+is overridden:
+.BR "command ls" ,
+.BR \\ls ,
+or Nushell
+.BR ^ls .
+.SH SEE ALSO
+.BR ls (1),
+https://opensh.org/
+.SH CERTIFICATION
+{OSO} Certified - opensh.org

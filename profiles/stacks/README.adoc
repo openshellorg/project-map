@@ -1,0 +1,23 @@
+= Sample Recognizer Profiles
+
+Each profile file in this directory represents a single technology profile that the recognizer can load. Use `ProjectRecognizer.fromProfilesDir(...)` with the path to a directory of profiles to assemble the recognizer at runtime.
+
+Supported extensions: `.sdl` (preferred), `.json5`, `.json`. Prefer editing the `.sdl` versions; see the project's SDL (SDLang) specification for format and rationale.
+
+Profiles follow this schema:
+
+* `name` (required) – Display name for the stack card.
+* `description` (optional) – Short human-friendly summary.
+* `parent` (optional) – Name of the parent tech profile. Hierarchies allow the UI to highlight child stacks (e.g. React under Node.js, FastAPI under Python).
+* `allOfFiles` / `anyOfFiles` / `excludedFiles` (optional arrays) – Glob patterns used to match relevant files.
+* `keywords` (optional array) – Strings to locate in project files for additional confirmation.
+* `manifests` (optional array) – Dependency manifest checks.
+
+Each manifest entry supports:
+
+* `pathPattern` (required) – Glob targeting manifest files within the project.
+* `format` (optional, defaults to `text`) – Either `text` or `json`.
+* `required` / `anyOf` (optional arrays) – Dependency names that must appear.
+* `dependencyFields` (JSON manifests only) – Fields that contain dependency objects.
+
+Add, remove, or edit profile files to customise the recognizer for your workspace.

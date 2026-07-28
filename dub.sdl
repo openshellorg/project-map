@@ -1,0 +1,6 @@
+name "project-map-workspace"
+description "OpenShellOrg project-map monorepo (library + lsgrouped CLI)"
+license "MIT"
+targetType "none"
+dependency "project-map" path="lib"
+dependency "lsgrouped" path="apps/lsgrouped"

@@ -1,0 +1,12 @@
+// React technology profile — prefer editing this .sdl over .json5
+name "React"
+parent "Node.js"
+description "Component library for building web user interfaces on top of Node.js tooling."
+anyOfFiles "**/package.json" "**/pnpm-lock.yaml"
+keywords "ReactDOM.createRoot" "import React from \"react\""
+manifests {
+	manifest pathPattern="**/package.json" format="json" {
+		required "react"
+		dependencyFields "dependencies" "devDependencies" "peerDependencies"
+	}
+}

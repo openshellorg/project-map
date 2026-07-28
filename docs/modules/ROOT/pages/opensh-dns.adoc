@@ -1,0 +1,13 @@
+= opensh.org DNS
+
+`opensh.org` is registered for OpenShellOrg.
+
+== Target
+
+Point the apex (and `www` if used) at the org docs/site host — typically GitHub Pages for `openshellorg.github.io`, or a dedicated Pages project — so `{OSO} Certified - opensh.org` resolves.
+
+Until DNS is live, the certification string still uses `opensh.org` as the intended public URL.
+
+== Not for cert URL
+
+Do not use `*.devcentr.org` in the certification mark.

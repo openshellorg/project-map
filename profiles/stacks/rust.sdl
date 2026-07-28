@@ -1,0 +1,4 @@
+// Rust technology profile
+name "Rust"
+description "Rust project detected via Cargo manifests."
+anyOfFiles "**/Cargo.toml" "**/Cargo.lock"

@@ -1,0 +1,29 @@
+name: project-map CI
+
+on:
+  push:
+    branches: [ main ]
+    tags: [ "v*" ]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up D (LDC)
+        uses: dlang-community/setup-dlang@v1
+        with:
+          compiler: ldc-latest
+
+      - name: Build library (project-map)
+        working-directory: lib
+        run: dub build --build=release
+
+      - name: Build CLI (lsgrouped)
+        working-directory: apps/lsgrouped
+        run: dub build --build=release
+

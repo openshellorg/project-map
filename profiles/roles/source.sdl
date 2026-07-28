@@ -1,0 +1,6 @@
+name "Source code"
+rolePath "Source code"
+eli5Label "Source code"
+iconId "source"
+order 100
+anyOfFiles "src" "src/" "source" "source/" "lib" "lib/" "app" "app/" "cmd" "cmd/" "pkg" "pkg/" "*.d" "*.rs" "*.go" "*.c" "*.cpp" "*.h" "*.hpp" "*.ts" "*.tsx" "*.js" "*.jsx" "*.py" "*.java" "*.kt" "*.swift" "*.cs" "*.fs" "*.rb" "*.php"

@@ -1,0 +1,14 @@
+// Flask technology profile — prefer editing this .sdl over .json5
+name "Flask"
+parent "Python"
+description "Lightweight Python web microframework based on Werkzeug and Jinja2."
+anyOfFiles "**/requirements.txt" "**/pyproject.toml"
+keywords "from flask import" "import flask"
+manifests {
+	manifest pathPattern="**/requirements.txt" format="text" {
+		anyOf "flask"
+	}
+	manifest pathPattern="**/pyproject.toml" format="text" {
+		anyOf "flask"
+	}
+}
