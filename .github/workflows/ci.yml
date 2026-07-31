@@ -11,18 +11,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # Layout matches local CODE_ROOT: github.com/{openshellorg,dlang-supplemental}/...
-      # so root dub.sdl path ../../dlang-supplemental/json5-dlang resolves.
-      - name: Checkout project-map
-        uses: actions/checkout@v4
-        with:
-          path: openshellorg/project-map
-
-      - name: Checkout json5-dlang (path dependency)
-        uses: actions/checkout@v4
-        with:
-          repository: dlang-supplemental/json5-dlang
-          path: dlang-supplemental/json5-dlang
+      - uses: actions/checkout@v4
 
       - name: Set up D (LDC)
         uses: dlang-community/setup-dlang@v1
@@ -30,9 +19,8 @@ jobs:
           compiler: ldc-latest
 
       - name: Build library (project-map)
-        working-directory: openshellorg/project-map
         run: dub build --build=release
 
       - name: Build CLI (lsgrouped)
-        working-directory: openshellorg/project-map/apps/lsgrouped
+        working-directory: apps/lsgrouped
         run: dub build --build=release
