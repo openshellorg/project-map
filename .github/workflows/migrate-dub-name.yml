@@ -1,0 +1,42 @@
+name: migrate-dub-name
+
+# One-shot: remove project-map-workspace, register project-map from the same GitHub URL.
+on:
+  workflow_dispatch:
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout project-map
+        uses: actions/checkout@v4
+        with:
+          path: package
+
+      - name: Checkout dub-publish
+        uses: actions/checkout@v4
+        with:
+          repository: dlang-supplemental/dub-publish
+          path: dub-publish
+
+      - uses: dlang-community/setup-dlang@v1
+        with:
+          compiler: ldc-latest
+
+      - name: Remove old package and register project-map
+        env:
+          DUB_REGISTRY_USER: ${{ secrets.DUB_REGISTRY_USER }}
+          DUB_REGISTRY_PASSWORD: ${{ secrets.DUB_REGISTRY_PASSWORD }}
+        working-directory: dub-publish
+        run: |
+          set -euo pipefail
+          dub build --build=release
+          ./dub-publish remove -n project-map-workspace --yes
+          sleep 3
+          ./dub-publish register \
+            --root ../package \
+            --url https://github.com/${{ github.repository }} \
+            --package project-map \
+            --ignore-fork
+          ./dub-publish status -n project-map
+          ./dub-publish status -n project-map-workspace || true
