@@ -2,7 +2,8 @@ name "project-map"
 description "Project type detection and file-role classification API"
 authors "OpenShellOrg"
 license "MIT"
-version "0.1.0"
+# Version comes from git tags (vX.Y.Z). Do not set "version" here —
+# code.dlang.org rejects tags when the recipe version field disagrees.
 targetType "library"
 sourcePaths "lib/source"
 importPaths "lib/source"
