@@ -1,0 +1,44 @@
+name: one-shot-setup-dub-webhooks
+
+# Regenerates code.dlang.org package webhook secrets and uploads them as a
+# private Actions artifact for local GitHub hook creation.
+on:
+  workflow_dispatch:
+
+jobs:
+  hooks:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        package: [dub-publish, dubx]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: dlang-supplemental/dub-publish
+          path: dub-publish
+
+      - uses: dlang-community/setup-dlang@v1
+        with:
+          compiler: ldc-latest
+
+      - name: Regen webhook secret for ${{ matrix.package }}
+        env:
+          DUB_REGISTRY_USER: ${{ secrets.DUB_REGISTRY_USER }}
+          DUB_REGISTRY_PASSWORD: ${{ secrets.DUB_REGISTRY_PASSWORD }}
+        working-directory: dub-publish
+        run: |
+          set -euo pipefail
+          dub build --build=release
+          mkdir -p out
+          ./dub-publish hooks -n "${{ matrix.package }}" \
+            --secret-out "out/${{ matrix.package }}.secret" \
+            --hooks-out "out/${{ matrix.package }}.hooks.txt"
+          # Do not echo secret contents
+          ls -la out
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dub-hooks-${{ matrix.package }}
+          path: dub-publish/out/
+          retention-days: 1
