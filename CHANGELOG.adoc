@@ -2,6 +2,12 @@
 
 See link:changelog-details/[] for dated detail notes.
 
+== 2026-07-31
+
+* Root recipe is now `project-map` (was `project-map-workspace`); library sources stay under `lib/source`.
+* Removed nested `lib/dub.json`; `lsgrouped` depends on the repo root package.
+* DUB registry package renamed via remove + re-register as `project-map`.
+
 == 2026-07-28
 
 * Initial `project-map` library (stack recognition + file roles)

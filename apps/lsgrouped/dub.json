@@ -7,7 +7,7 @@
 	"targetName": "lsgrouped",
 	"sourcePaths": ["source"],
 	"dependencies": {
-		"project-map": { "path": "../../lib" }
+		"project-map": { "path": "../.." }
 	},
 	"stringImportPaths": ["../../profiles", "man"]
 }

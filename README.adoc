@@ -3,7 +3,7 @@
 
 OpenShellOrg library and CLI for **project-type detection** and **file-role grouping**.
 
-* Library (`project-map`) — D API consumed by DevCentr, GUIs, and CLIs
+* Library (`project-map`) — D API consumed by DevCentr, GUIs, and CLIs (root `dub.sdl`, sources in `lib/source`)
 * CLI (`lsgrouped`) — list a directory with entries grouped by role (not a drop-in for `ls`)
 * Profiles — SDL corpus under `profiles/stacks` and `profiles/roles`
 * Nushell module — `modules/nu/lsgrouped.nu`
@@ -13,46 +13,33 @@ Certification mark: `{OSO} Certified - opensh.org`
 == Build
 
 ----
-dub build :project-map
-dub build :lsgrouped
+dub build
 ----
 
-Or from package dirs:
+CLI:
 
 ----
-cd lib && dub build
-cd ../apps/lsgrouped && dub build
+cd apps/lsgrouped && dub build
 ----
 
 == CI
 
-GitHub Actions workflow `ci.yml` builds the library (`lib/`) and the CLI (`apps/lsgrouped/`) on pushes, PRs, and manual dispatch.
+GitHub Actions workflow `ci.yml` builds the library (repo root) and the CLI (`apps/lsgrouped/`) on pushes, PRs, and manual dispatch.
 
 == Publish to DUB registry
 
-Official `dub` has no `publish` command. Use https://github.com/dlang-supplemental/dub-publish[`dlang-supplemental/dub-publish`] to register the repository with https://code.dlang.org[code.dlang.org].
+Official `dub` has no `publish` command. Use https://github.com/dlang-supplemental/dub-publish[`dlang-supplemental/dub-publish`] to register with https://code.dlang.org[code.dlang.org].
 
-The **registered package name** is the root recipe name: `project-map-workspace` (see `dub.sdl`). The library in `lib/` (`project-map`) is a path dependency of that workspace package — DUB registers one package per Git URL from the root recipe.
-
-Workflow:
-
-1. Tag a release (example: `git tag v0.2.0 && git push origin v0.2.0`)
-2. Ensure `origin` points at `https://github.com/openshellorg/project-map` (or pass `--url` explicitly)
-3. Run locally, or let CI do it:
+Registered package name: **`project-map`** (root recipe).
 
 ----
 dub-publish register \
   --url https://github.com/openshellorg/project-map \
-  --package project-map-workspace \
+  --package project-map \
   --ignore-fork
 ----
 
-CI workflow `dub-publish` runs on `v*` tags and `workflow_dispatch`. It calls the reusable workflow in `dlang-supplemental/dub-publish` and needs secrets:
-
-* `DUB_REGISTRY_USER`
-* `DUB_REGISTRY_PASSWORD`
-
-Re-running register is safe (already-registered → refresh). New versions also appear from SemVer tags (registry poll ~2×/hour) or `dub-publish update -n project-map-workspace --secret …`.
+CI workflow `dub-publish` runs on `v*` tags and `workflow_dispatch` (secrets: `DUB_REGISTRY_USER`, `DUB_REGISTRY_PASSWORD`).
 
 == Docs
 

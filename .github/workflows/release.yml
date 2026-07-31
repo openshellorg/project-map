@@ -55,4 +55,4 @@ jobs:
             "project-map": { "repository": "git+https://github.com/openshellorg/project-map.git", "version": "${{ steps.ver.outputs.tag }}" }
             ```
 
-            Docs: https://openshellorg.github.io/open-shell-org/project-map/
+            Docs: https://openshellorg.github.io/docs/project-map/

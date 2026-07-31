@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Layout matches local CODE_ROOT: github.com/{openshellorg,dlang-supplemental}/...
-      # so lib/dub.json path ../../../dlang-supplemental/json5-dlang resolves.
+      # so root dub.sdl path ../../dlang-supplemental/json5-dlang resolves.
       - name: Checkout project-map
         uses: actions/checkout@v4
         with:
@@ -30,7 +30,7 @@ jobs:
           compiler: ldc-latest
 
       - name: Build library (project-map)
-        working-directory: openshellorg/project-map/lib
+        working-directory: openshellorg/project-map
         run: dub build --build=release
 
       - name: Build CLI (lsgrouped)
