@@ -30,13 +30,13 @@ GitHub Actions workflow `ci.yml` builds the library (`lib/`) and the CLI (`apps/
 
 == Publish to DUB registry
 
-This environment's DUB toolchain does not provide `dub publish`. Publishing/registration at the official DUB registry (`code.dlang.org`) is automated via the `dlang-supplemental/dub-publish` CLI.
+Official `dub` has no `publish` command. Use https://github.com/dlang-supplemental/dub-publish[`dlang-supplemental/dub-publish`] to register the repository with https://code.dlang.org[code.dlang.org].
 
 Workflow:
 
 1. Tag a release (example: `git tag v0.2.0 && git push origin v0.2.0`)
 2. Ensure `origin` points at `https://github.com/openshellorg/project-map` (or pass `--url` explicitly)
-3. Run (locally) or let CI do it:
+3. Run locally, or let CI do it:
 
 ----
 dub-publish --root lib register \
@@ -45,10 +45,12 @@ dub-publish --root lib register \
   --ignore-fork
 ----
 
-CI workflow `publish-dub.yml` registers on tags matching `v*` (and also supports `workflow_dispatch`). It requires GitHub secrets:
+CI workflow `publish-dub.yml` runs on `v*` tags and `workflow_dispatch`. It calls the reusable workflow in `dlang-supplemental/dub-publish` and needs secrets:
 
 * `DUB_REGISTRY_USER`
 * `DUB_REGISTRY_PASSWORD`
+
+New versions appear from SemVer tags (registry poll ~2×/hour) or `dub-publish update -n project-map --secret …`.
 
 == Docs
 
