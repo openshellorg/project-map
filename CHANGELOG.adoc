@@ -9,6 +9,7 @@ See link:changelog-details/[] for dated detail notes.
 * `json5-dlang` is a git repository dependency (not a local path) so code.dlang.org clones resolve.
 * Dropped obsolete recipe `version` field so SemVer git tags can ingest on code.dlang.org.
 * DUB registry: removed `project-map-workspace`; re-registered as `project-map`.
+* Package/README description focuses on stack detection and file-role classification (not repo layout).
 
 == 2026-07-28
 

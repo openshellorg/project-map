@@ -1,5 +1,5 @@
 name "project-map"
-description "Project type detection and file-role classification API"
+description "Detect technology stacks in a directory tree and classify files by role"
 authors "OpenShellOrg"
 license "MIT"
 # Version comes from git tags (vX.Y.Z). Do not set "version" here —

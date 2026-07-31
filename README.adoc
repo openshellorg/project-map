@@ -1,11 +1,12 @@
 = project-map
 :toc: preamble
 
-OpenShellOrg library and CLI for **project-type detection** and **file-role grouping**.
+Detect which technology stacks a directory tree belongs to, and classify files by role (source, build, docs, config, and similar), so tools and UIs can group and reason about projects without hard-coding per-ecosystem rules.
 
-* Library (`project-map`) — D API consumed by DevCentr, GUIs, and CLIs (root `dub.sdl`, sources in `lib/source`)
-* CLI (`lsgrouped`) — list a directory with entries grouped by role (not a drop-in for `ls`)
-* Profiles — SDL corpus under `profiles/stacks` and `profiles/roles`
+OpenShellOrg ships this as a D library. Companion pieces in the same repository:
+
+* `lsgrouped` CLI — list a directory with entries grouped by role (not a drop-in for `ls`)
+* SDL profiles under `profiles/stacks` and `profiles/roles`
 * Nushell module — `modules/nu/lsgrouped.nu`
 
 Certification mark: `{OSO} Certified - opensh.org`
@@ -21,25 +22,6 @@ CLI:
 ----
 cd apps/lsgrouped && dub build
 ----
-
-== CI
-
-GitHub Actions workflow `ci.yml` builds the library (repo root) and the CLI (`apps/lsgrouped/`) on pushes, PRs, and manual dispatch.
-
-== Publish to DUB registry
-
-Official `dub` has no `publish` command. Use https://github.com/dlang-supplemental/dub-publish[`dlang-supplemental/dub-publish`] to register with https://code.dlang.org[code.dlang.org].
-
-Registered package name: **`project-map`** (root recipe).
-
-----
-dub-publish register \
-  --url https://github.com/openshellorg/project-map \
-  --package project-map \
-  --ignore-fork
-----
-
-CI workflow `dub-publish` runs on `v*` tags and `workflow_dispatch` (secrets: `DUB_REGISTRY_USER`, `DUB_REGISTRY_PASSWORD`).
 
 == Docs
 
