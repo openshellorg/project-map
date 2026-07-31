@@ -31,12 +31,19 @@ jobs:
         run: |
           set -euo pipefail
           dub build --build=release
-          ./dub-publish remove -n project-map-workspace --yes
-          sleep 3
+          # Old package already removed; re-register under project-map.
           ./dub-publish register \
             --root ../package \
             --url https://github.com/${{ github.repository }} \
             --package project-map \
             --ignore-fork
-          ./dub-publish status -n project-map
+          for i in 1 2 3 4 5 6 7 8 9 10 11 12; do
+            if ./dub-publish status -n project-map; then
+              exit 0
+            fi
+            echo "waiting for registry ingest ($i)..."
+            sleep 10
+          done
+          echo "ERROR: project-map still not visible on the registry after register"
           ./dub-publish status -n project-map-workspace || true
+          exit 1
