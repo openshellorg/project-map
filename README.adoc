@@ -32,6 +32,8 @@ GitHub Actions workflow `ci.yml` builds the library (`lib/`) and the CLI (`apps/
 
 Official `dub` has no `publish` command. Use https://github.com/dlang-supplemental/dub-publish[`dlang-supplemental/dub-publish`] to register the repository with https://code.dlang.org[code.dlang.org].
 
+The **registered package name** is the root recipe name: `project-map-workspace` (see `dub.sdl`). The library in `lib/` (`project-map`) is a path dependency of that workspace package — DUB registers one package per Git URL from the root recipe.
+
 Workflow:
 
 1. Tag a release (example: `git tag v0.2.0 && git push origin v0.2.0`)
@@ -39,18 +41,18 @@ Workflow:
 3. Run locally, or let CI do it:
 
 ----
-dub-publish --root lib register \
+dub-publish register \
   --url https://github.com/openshellorg/project-map \
-  --package project-map \
+  --package project-map-workspace \
   --ignore-fork
 ----
 
-CI workflow `publish-dub.yml` runs on `v*` tags and `workflow_dispatch`. It calls the reusable workflow in `dlang-supplemental/dub-publish` and needs secrets:
+CI workflow `dub-publish` runs on `v*` tags and `workflow_dispatch`. It calls the reusable workflow in `dlang-supplemental/dub-publish` and needs secrets:
 
 * `DUB_REGISTRY_USER`
 * `DUB_REGISTRY_PASSWORD`
 
-New versions appear from SemVer tags (registry poll ~2×/hour) or `dub-publish update -n project-map --secret …`.
+Re-running register is safe (already-registered → refresh). New versions also appear from SemVer tags (registry poll ~2×/hour) or `dub-publish update -n project-map-workspace --secret …`.
 
 == Docs
 

@@ -1,7 +1,8 @@
 name: dub-publish
 
-# Registers the package with code.dlang.org via dlang-supplemental/dub-publish.
-# After registration, push SemVer tags (v*) so the registry can pick up versions.
+# Registers/refreshes the package on code.dlang.org via dlang-supplemental/dub-publish.
+# Registered package name is the root recipe: project-map-workspace (lib/ is a path dep).
+# After registration, SemVer tags (v*) are picked up by the registry (or refreshed here).
 on:
   push:
     tags: ["v*"]
@@ -11,9 +12,9 @@ jobs:
   publish:
     uses: dlang-supplemental/dub-publish/.github/workflows/register-package.yml@main
     with:
-      package: project-map
+      package: project-map-workspace
       url: https://github.com/${{ github.repository }}
-      root: lib
+      root: .
       ignore_fork: true
     secrets:
       DUB_REGISTRY_USER: ${{ secrets.DUB_REGISTRY_USER }}
