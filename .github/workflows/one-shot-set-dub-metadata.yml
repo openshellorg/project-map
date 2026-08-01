@@ -1,0 +1,47 @@
+name: one-shot-set-dub-metadata
+
+# Sets docs URL + categories for packages that were registered empty.
+on:
+  workflow_dispatch:
+
+jobs:
+  metadata:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - package: dub-publish
+            docs: https://github.com/dlang-supplemental/dub-publish
+            categories: "application.desktop.development.packaging library.development"
+          - package: dubx
+            docs: https://github.com/dlang-supplemental/dubx
+            categories: "application.desktop.development.build application.desktop.development.packaging"
+          - package: project-map
+            docs: https://github.com/openshellorg/project-map
+            categories: "library.development library.data"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: dlang-supplemental/dub-publish
+          path: dub-publish
+
+      - uses: dlang-community/setup-dlang@v1
+        with:
+          compiler: ldc-latest
+
+      - name: Set docs + categories for ${{ matrix.package }}
+        env:
+          DUB_REGISTRY_USER: ${{ secrets.DUB_REGISTRY_USER }}
+          DUB_REGISTRY_PASSWORD: ${{ secrets.DUB_REGISTRY_PASSWORD }}
+        working-directory: dub-publish
+        run: |
+          set -euo pipefail
+          dub build --build=release
+          ./dub-publish docs-url -n "${{ matrix.package }}" --docs-url "${{ matrix.docs }}"
+          ARGS=(categories -n "${{ matrix.package }}")
+          for c in ${{ matrix.categories }}; do
+            ARGS+=(--category "$c")
+          done
+          ./dub-publish "${ARGS[@]}"
+          echo "Updated ${{ matrix.package }}"
