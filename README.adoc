@@ -1,5 +1,33 @@
-= project-map
+ifndef::env-github[:icons: font]
 :toc: preamble
+:toclevels: 2
+:sectanchors:
+
+ifndef::env-github[]
+image:https://img.shields.io/github/contributors/openshellorg/project-map.svg?style=for-the-badge[Contributors,link=https://github.com/openshellorg/project-map/graphs/contributors]
+image:https://img.shields.io/github/forks/openshellorg/project-map.svg?style=for-the-badge[Forks,link=https://github.com/openshellorg/project-map/network/members]
+image:https://img.shields.io/github/stars/openshellorg/project-map.svg?style=for-the-badge[Stars,link=https://github.com/openshellorg/project-map/stargazers]
+image:https://img.shields.io/github/issues/openshellorg/project-map.svg?style=for-the-badge[Issues,link=https://github.com/openshellorg/project-map/issues]
+image:https://img.shields.io/github/license/openshellorg/project-map.svg?style=for-the-badge[License,link=https://github.com/openshellorg/project-map/blob/main/LICENSE]
+endif::[]
+
+ifdef::env-github[]
+image:https://img.shields.io/github/contributors/openshellorg/project-map.svg?style=for-the-badge[Contributors]
+image:https://img.shields.io/github/forks/openshellorg/project-map.svg?style=for-the-badge[Forks]
+image:https://img.shields.io/github/stars/openshellorg/project-map.svg?style=for-the-badge[Stars]
+image:https://img.shields.io/github/issues/openshellorg/project-map.svg?style=for-the-badge[Issues]
+image:https://img.shields.io/github/license/openshellorg/project-map.svg?style=for-the-badge[License]
+endif::[]
+
+= project-map
+
+Detect technology stacks in a directory tree and classify files by role.
+
+link:https://openshellorg.github.io/open-shell-org/project-map/[Explore the docs] ·
+link:https://github.com/openshellorg/project-map/issues[Report Bug] ·
+link:https://github.com/openshellorg/project-map/issues[Request Feature]
+
+== About The Project
 
 Detect which technology stacks a directory tree belongs to, and classify files by role (source, build, docs, config, and similar), so tools and UIs can group and reason about projects without hard-coding per-ecosystem rules.
 
@@ -11,19 +39,21 @@ OpenShellOrg ships this as a D library. Companion pieces in the same repository:
 
 Certification mark: `{OSO} Certified - opensh.org`
 
-== Build
+== Installation
 
+[source,bash]
 ----
 dub build
 ----
 
 CLI:
 
+[source,bash]
 ----
 cd apps/lsgrouped && dub build
 ----
 
-== Docs
+== Usage
 
 * link:docs/modules/ROOT/pages/index.adoc[Overview]
 * link:CHANGELOG.adoc[Changelog]
@@ -32,3 +62,14 @@ cd apps/lsgrouped && dub build
 
 * https://opensh.org/[opensh.org] (OSO public home)
 * DevCentr consumes this library for workspace stack recognition
+
+== License
+
+See link:LICENSE[LICENSE].
+
+== Contact
+
+Open Shell Org — openshell@devcentr.org
+
+* Project: https://github.com/openshellorg/project-map
+* Site: https://openshellorg.github.io
