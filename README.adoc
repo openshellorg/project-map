@@ -3,21 +3,12 @@ ifndef::env-github[:icons: font]
 :toclevels: 2
 :sectanchors:
 
-ifndef::env-github[]
+[[readme-top]]
 image:https://img.shields.io/github/contributors/openshellorg/project-map.svg?style=for-the-badge[Contributors,link=https://github.com/openshellorg/project-map/graphs/contributors]
 image:https://img.shields.io/github/forks/openshellorg/project-map.svg?style=for-the-badge[Forks,link=https://github.com/openshellorg/project-map/network/members]
 image:https://img.shields.io/github/stars/openshellorg/project-map.svg?style=for-the-badge[Stars,link=https://github.com/openshellorg/project-map/stargazers]
 image:https://img.shields.io/github/issues/openshellorg/project-map.svg?style=for-the-badge[Issues,link=https://github.com/openshellorg/project-map/issues]
 image:https://img.shields.io/github/license/openshellorg/project-map.svg?style=for-the-badge[License,link=https://github.com/openshellorg/project-map/blob/main/LICENSE]
-endif::[]
-
-ifdef::env-github[]
-image:https://img.shields.io/github/contributors/openshellorg/project-map.svg?style=for-the-badge[Contributors]
-image:https://img.shields.io/github/forks/openshellorg/project-map.svg?style=for-the-badge[Forks]
-image:https://img.shields.io/github/stars/openshellorg/project-map.svg?style=for-the-badge[Stars]
-image:https://img.shields.io/github/issues/openshellorg/project-map.svg?style=for-the-badge[Issues]
-image:https://img.shields.io/github/license/openshellorg/project-map.svg?style=for-the-badge[License]
-endif::[]
 
 = project-map
 
@@ -39,6 +30,8 @@ OpenShellOrg ships this as a D library. Companion pieces in the same repository:
 
 Certification mark: `{OSO} Certified - opensh.org`
 
+link:#readme-top[back to top]
+
 == Installation
 
 [source,bash]
@@ -53,10 +46,14 @@ CLI:
 cd apps/lsgrouped && dub build
 ----
 
+link:#readme-top[back to top]
+
 == Usage
 
 * link:docs/modules/ROOT/pages/index.adoc[Overview]
 * link:CHANGELOG.adoc[Changelog]
+
+link:#readme-top[back to top]
 
 == Related
 
@@ -67,9 +64,13 @@ cd apps/lsgrouped && dub build
 
 See link:LICENSE[LICENSE].
 
+link:#readme-top[back to top]
+
 == Contact
 
 Open Shell Org — openshell@devcentr.org
 
 * Project: https://github.com/openshellorg/project-map
 * Site: https://openshellorg.github.io
+
+link:#readme-top[back to top]
