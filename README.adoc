@@ -3,7 +3,30 @@ ifndef::env-github[:icons: font]
 :toclevels: 2
 :sectanchors:
 
-[[readme-top]]
+ifdef::env-github[]
+++++
+<a id="readme-top"></a>
+<div align="center">
+<a href="https://github.com/openshellorg/project-map/graphs/contributors"><img src="https://img.shields.io/github/contributors/openshellorg/project-map.svg?style=for-the-badge" alt="Contributors"></a>
+<a href="https://github.com/openshellorg/project-map/network/members"><img src="https://img.shields.io/github/forks/openshellorg/project-map.svg?style=for-the-badge" alt="Forks"></a>
+<a href="https://github.com/openshellorg/project-map/stargazers"><img src="https://img.shields.io/github/stars/openshellorg/project-map.svg?style=for-the-badge" alt="Stars"></a>
+<a href="https://github.com/openshellorg/project-map/issues"><img src="https://img.shields.io/github/issues/openshellorg/project-map.svg?style=for-the-badge" alt="Issues"></a>
+<a href="https://github.com/openshellorg/project-map/blob/main/LICENSE"><img src="https://img.shields.io/github/license/openshellorg/project-map.svg?style=for-the-badge" alt="License"></a>
+<br />
+<h3 align="center">project-map</h3>
+<p align="center">
+Detect technology stacks in a directory tree and classify files by role.<br />
+<a href="https://openshellorg.github.io/open-shell-org/project-map/">Explore the docs</a><br />
+<br />
+<a href="https://github.com/openshellorg/project-map/issues">Report Bug</a>
+&middot;
+<a href="https://github.com/openshellorg/project-map/issues">Request Feature</a>
+</p>
+</div>
+++++
+endif::[]
+
+ifndef::env-github[]
 image:https://img.shields.io/github/contributors/openshellorg/project-map.svg?style=for-the-badge[Contributors,link=https://github.com/openshellorg/project-map/graphs/contributors]
 image:https://img.shields.io/github/forks/openshellorg/project-map.svg?style=for-the-badge[Forks,link=https://github.com/openshellorg/project-map/network/members]
 image:https://img.shields.io/github/stars/openshellorg/project-map.svg?style=for-the-badge[Stars,link=https://github.com/openshellorg/project-map/stargazers]
@@ -17,6 +40,7 @@ Detect technology stacks in a directory tree and classify files by role.
 link:https://openshellorg.github.io/open-shell-org/project-map/[Explore the docs] ·
 link:https://github.com/openshellorg/project-map/issues[Report Bug] ·
 link:https://github.com/openshellorg/project-map/issues[Request Feature]
+endif::[]
 
 == About The Project
 
@@ -30,8 +54,9 @@ OpenShellOrg ships this as a D library. Companion pieces in the same repository:
 
 Certification mark: `{OSO} Certified - opensh.org`
 
-link:#readme-top[back to top]
-
+++++
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+++++
 == Installation
 
 [source,bash]
@@ -46,15 +71,17 @@ CLI:
 cd apps/lsgrouped && dub build
 ----
 
-link:#readme-top[back to top]
-
+++++
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+++++
 == Usage
 
 * link:docs/modules/ROOT/pages/index.adoc[Overview]
 * link:CHANGELOG.adoc[Changelog]
 
-link:#readme-top[back to top]
-
+++++
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+++++
 == Related
 
 * https://opensh.org/[opensh.org] (OSO public home)
@@ -64,8 +91,9 @@ link:#readme-top[back to top]
 
 See link:LICENSE[LICENSE].
 
-link:#readme-top[back to top]
-
+++++
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+++++
 == Contact
 
 Open Shell Org — openshell@devcentr.org
@@ -73,4 +101,6 @@ Open Shell Org — openshell@devcentr.org
 * Project: https://github.com/openshellorg/project-map
 * Site: https://openshellorg.github.io
 
-link:#readme-top[back to top]
+++++
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+++++
