@@ -1,0 +1,5 @@
+== DUB registry refresh on tag create/delete (2026-08-13)
+
+code.dlang.org's GitHub webhook endpoint only queues an update on `create` (new tags). Deleting a tag did not refresh the package, so ingest errors for `v0.1.0` / `v0.1.1` stayed on the owner page.
+
+Workflow `dub-registry-refresh.yml` POSTs the generic update URL on tag create and delete. Repo secret: `DUB_PACKAGE_SECRET`.
