@@ -1,0 +1,5 @@
+// pnpm workspace monorepo layout
+name "pnpm workspace"
+parent "Node.js"
+description "pnpm monorepo with workspace packages listed in pnpm-workspace.yaml; install and run from repo root."
+anyOfFiles "**/pnpm-workspace.yaml" "**/pnpm-lock.yaml"

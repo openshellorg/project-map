@@ -1,0 +1,12 @@
+// Vite technology profile
+name "Vite"
+parent "Node.js"
+description "Dev server and bundler for modern front-end apps; config in vite.config.*"
+anyOfFiles "**/vite.config.*" "**/vite.config.ts" "**/vite.config.js" "**/vite.config.mjs"
+keywords "from \"vite\"" "defineConfig"
+manifests {
+	manifest pathPattern="**/package.json" format="json" {
+		required "vite"
+		dependencyFields "dependencies" "devDependencies"
+	}
+}

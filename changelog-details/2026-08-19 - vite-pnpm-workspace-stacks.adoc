@@ -1,0 +1,14 @@
+= 2026-08-19 — Vite and pnpm workspace stack profiles
+
+== Summary
+
+Adds two Node.js child stack profiles for common detection gaps: **Vite** (bundler/dev server) and **pnpm workspace** (monorepo layout).
+
+== Changes
+
+* `profiles/stacks/vite.sdl` — matches `vite.config.*` and `vite` in `package.json` manifests.
+* `profiles/stacks/pnpm-workspace.sdl` — matches `pnpm-workspace.yaml` / `pnpm-lock.yaml` under a Node parent.
+
+== Release
+
+Tag `v0.1.4` for DUB consumers (`project-map ~>0.1.4`).

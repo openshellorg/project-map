@@ -2,6 +2,11 @@
 
 See link:changelog-details/[] for dated detail notes.
 
+== 2026-08-19
+
+* Stack profiles: **Vite** and **pnpm workspace** (child stacks under Node.js).
+* See xref:changelog-details/2026-08-19 - vite-pnpm-workspace-stacks.adoc[Detailed changelog].
+
 == 2026-08-13
 
 * CI: `dub-registry-refresh.yml` queues a code.dlang.org package update on tag create and delete (GitHub's DUB hook endpoint ignores `delete`).
