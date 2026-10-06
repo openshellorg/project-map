@@ -36,3 +36,5 @@
 apps/lsgrouped/lsgrouped.exe
 apps/lsgrouped/lsgrouped.pdb
 lib/project-map.lib
+!/.editorconfig
+!/.gitattributes
