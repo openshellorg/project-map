@@ -9,17 +9,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout project-map
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           path: package
 
       - name: Checkout dub-publish
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: dlang-supplemental/dub-publish
           path: dub-publish
 
-      - uses: dlang-community/setup-dlang@v1
+      - uses: dlang-community/setup-dlang@v2
         with:
           compiler: ldc-latest
 
