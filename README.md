@@ -1,0 +1,70 @@
+<a id="readme-top"></a>
+<div align="center">
+<a href="https://github.com/openshellorg/project-map/graphs/contributors"><img src="https://img.shields.io/github/contributors/openshellorg/project-map.svg?style=for-the-badge" alt="Contributors"></a>
+<a href="https://github.com/openshellorg/project-map/network/members"><img src="https://img.shields.io/github/forks/openshellorg/project-map.svg?style=for-the-badge" alt="Forks"></a>
+<a href="https://github.com/openshellorg/project-map/stargazers"><img src="https://img.shields.io/github/stars/openshellorg/project-map.svg?style=for-the-badge" alt="Stars"></a>
+<a href="https://github.com/openshellorg/project-map/issues"><img src="https://img.shields.io/github/issues/openshellorg/project-map.svg?style=for-the-badge" alt="Issues"></a>
+<a href="https://github.com/openshellorg/project-map/blob/main/LICENSE"><img src="https://img.shields.io/github/license/openshellorg/project-map.svg?style=for-the-badge" alt="License"></a>
+<br />
+<h3 align="center">project-map</h3>
+<p align="center">
+Detect technology stacks in a directory tree and classify files by role.<br />
+<a href="https://openshellorg.github.io/open-shell-org/project-map/">Explore the docs</a><br />
+<br />
+<a href="https://github.com/openshellorg/project-map/issues">Report Bug</a>
+&middot;
+<a href="https://github.com/openshellorg/project-map/issues">Request Feature</a>
+</p>
+</div>
+
+
+## About The Project
+
+Detect which technology stacks a directory tree belongs to, and classify files by role (source, build, docs, config, and similar), so tools and UIs can group and reason about projects without hard-coding per-ecosystem rules.
+
+OpenShellOrg ships this as a D library. Companion pieces in the same repository:
+
+* `lsgrouped` CLI — list a directory with entries grouped by role (not a drop-in for `ls`)
+* SDL profiles under `profiles/stacks` and `profiles/roles`
+* Nushell module — `modules/nu/lsgrouped.nu`
+
+Certification mark: `{OSO} Certified - opensh.org`
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+## Installation
+
+```bash
+dub build
+```
+
+CLI:
+
+```bash
+cd apps/lsgrouped && dub build
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+## Usage
+
+* [Overview](docs/modules/ROOT/pages/index.adoc)
+* [Changelog](CHANGELOG.adoc)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+## Related
+
+* https://opensh.org/[opensh.org] (OSO public home)
+* DevCentr consumes this library for workspace stack recognition
+
+## License
+
+See [LICENSE](LICENSE).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+## Contact
+
+Open Shell Org — openshell@devcentr.org
+
+* Project: https://github.com/openshellorg/project-map
+* Site: https://openshellorg.github.io
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>

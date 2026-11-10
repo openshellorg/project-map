@@ -1,5 +1,11 @@
 = Changelog
 
+== 2026-11-10
+
+=== Registry readme
+
+* Version 0.1.5 publishes a root `README.md` so code.dlang.org can show the listing.
+
 See link:changelog-details/[] for dated detail notes.
 
 == 2026-08-19
